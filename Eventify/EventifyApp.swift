@@ -9,12 +9,15 @@ import SwiftUI
 
 @main
 struct EventifyApp: App {
-    let persistenceController = PersistenceController.shared
+    @AppStorage("isLoggedIn") var isLoggedIn = false
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            if isLoggedIn == true {
+                TabBarView()
+            } else {
+                Register()
+            }
         }
     }
 }

@@ -8,22 +8,49 @@
 
 /* Begin PBXBuildFile section */
 		A26A85092B04824A00CD4F0F /* EventifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A85082B04824A00CD4F0F /* EventifyApp.swift */; };
-		A26A850B2B04824A00CD4F0F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A850A2B04824A00CD4F0F /* Persistence.swift */; };
 		A26A850E2B04824A00CD4F0F /* Eventify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A26A850C2B04824A00CD4F0F /* Eventify.xcdatamodeld */; };
-		A26A85102B04824A00CD4F0F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A850F2B04824A00CD4F0F /* ContentView.swift */; };
 		A26A85122B04824D00CD4F0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A26A85112B04824D00CD4F0F /* Assets.xcassets */; };
 		A26A85162B04824D00CD4F0F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A26A85152B04824D00CD4F0F /* Preview Assets.xcassets */; };
+		A26A85222B04EB9400CD4F0F /* Comment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A851C2B04EB9400CD4F0F /* Comment+CoreDataClass.swift */; };
+		A26A85232B04EB9400CD4F0F /* Comment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A851D2B04EB9400CD4F0F /* Comment+CoreDataProperties.swift */; };
+		A26A85242B04EB9400CD4F0F /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A851E2B04EB9400CD4F0F /* User+CoreDataClass.swift */; };
+		A26A85252B04EB9400CD4F0F /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A851F2B04EB9400CD4F0F /* User+CoreDataProperties.swift */; };
+		A26A85262B04EB9400CD4F0F /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A85202B04EB9400CD4F0F /* Event+CoreDataClass.swift */; };
+		A26A85272B04EB9400CD4F0F /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A85212B04EB9400CD4F0F /* Event+CoreDataProperties.swift */; };
+		A26A852B2B04EC7B00CD4F0F /* CustomComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A852A2B04EC7B00CD4F0F /* CustomComponents.swift */; };
+		A26A852D2B04ED0E00CD4F0F /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A852C2B04ED0D00CD4F0F /* Validation.swift */; };
+		A26A85322B04ED9B00CD4F0F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A85312B04ED9B00CD4F0F /* ProfileView.swift */; };
+		A26A85342B04EDAB00CD4F0F /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A85332B04EDAB00CD4F0F /* Register.swift */; };
+		A26A85382B04EE6500CD4F0F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A85372B04EE6500CD4F0F /* DataManager.swift */; };
+		A26A853A2B04EE7C00CD4F0F /* FileManagerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A85392B04EE7C00CD4F0F /* FileManagerClass.swift */; };
+		A26A853C2B04EE9900CD4F0F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A853B2B04EE9900CD4F0F /* LocationManager.swift */; };
+		A26A853F2B04EF9F00CD4F0F /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A853E2B04EF9F00CD4F0F /* TabBarView.swift */; };
+		A26A85422B04F00400CD4F0F /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A85412B04F00400CD4F0F /* EventView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A26A85052B04824A00CD4F0F /* Eventify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A26A85082B04824A00CD4F0F /* EventifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventifyApp.swift; sourceTree = "<group>"; };
-		A26A850A2B04824A00CD4F0F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		A26A850D2B04824A00CD4F0F /* Eventify.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Eventify.xcdatamodel; sourceTree = "<group>"; };
-		A26A850F2B04824A00CD4F0F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A26A85112B04824D00CD4F0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A26A85132B04824D00CD4F0F /* Eventify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Eventify.entitlements; sourceTree = "<group>"; };
 		A26A85152B04824D00CD4F0F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A26A851C2B04EB9400CD4F0F /* Comment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comment+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A26A851D2B04EB9400CD4F0F /* Comment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comment+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A26A851E2B04EB9400CD4F0F /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A26A851F2B04EB9400CD4F0F /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A26A85202B04EB9400CD4F0F /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A26A85212B04EB9400CD4F0F /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A26A852A2B04EC7B00CD4F0F /* CustomComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomComponents.swift; sourceTree = "<group>"; };
+		A26A852C2B04ED0D00CD4F0F /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		A26A85312B04ED9B00CD4F0F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		A26A85332B04EDAB00CD4F0F /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		A26A85372B04EE6500CD4F0F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		A26A85392B04EE7C00CD4F0F /* FileManagerClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerClass.swift; sourceTree = "<group>"; };
+		A26A853B2B04EE9900CD4F0F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		A26A853E2B04EF9F00CD4F0F /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		A26A85412B04F00400CD4F0F /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		A26A85432B04F46A00CD4F0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +83,16 @@
 		A26A85072B04824A00CD4F0F /* Eventify */ = {
 			isa = PBXGroup;
 			children = (
+				A26A85352B04EE3A00CD4F0F /* DataManager */,
+				A26A85302B04ED8000CD4F0F /* Profile */,
+				A26A852E2B04ED2500CD4F0F /* Utility */,
+				A26A85292B04EC5000CD4F0F /* Components */,
+				A26A85282B04EB9B00CD4F0F /* DataModel */,
+				A26A85402B04EFF000CD4F0F /* Event */,
+				A26A853D2B04EF7D00CD4F0F /* TabBar */,
 				A26A85082B04824A00CD4F0F /* EventifyApp.swift */,
-				A26A850A2B04824A00CD4F0F /* Persistence.swift */,
-				A26A850F2B04824A00CD4F0F /* ContentView.swift */,
 				A26A85112B04824D00CD4F0F /* Assets.xcassets */,
+				A26A85432B04F46A00CD4F0F /* Info.plist */,
 				A26A85132B04824D00CD4F0F /* Eventify.entitlements */,
 				A26A850C2B04824A00CD4F0F /* Eventify.xcdatamodeld */,
 				A26A85142B04824D00CD4F0F /* Preview Content */,
@@ -73,6 +106,70 @@
 				A26A85152B04824D00CD4F0F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A26A85282B04EB9B00CD4F0F /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				A26A851C2B04EB9400CD4F0F /* Comment+CoreDataClass.swift */,
+				A26A851D2B04EB9400CD4F0F /* Comment+CoreDataProperties.swift */,
+				A26A851E2B04EB9400CD4F0F /* User+CoreDataClass.swift */,
+				A26A851F2B04EB9400CD4F0F /* User+CoreDataProperties.swift */,
+				A26A85202B04EB9400CD4F0F /* Event+CoreDataClass.swift */,
+				A26A85212B04EB9400CD4F0F /* Event+CoreDataProperties.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		A26A85292B04EC5000CD4F0F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A26A852A2B04EC7B00CD4F0F /* CustomComponents.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A26A852E2B04ED2500CD4F0F /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A26A852C2B04ED0D00CD4F0F /* Validation.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		A26A85302B04ED8000CD4F0F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A26A85312B04ED9B00CD4F0F /* ProfileView.swift */,
+				A26A85332B04EDAB00CD4F0F /* Register.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		A26A85352B04EE3A00CD4F0F /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				A26A85372B04EE6500CD4F0F /* DataManager.swift */,
+				A26A85392B04EE7C00CD4F0F /* FileManagerClass.swift */,
+				A26A853B2B04EE9900CD4F0F /* LocationManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		A26A853D2B04EF7D00CD4F0F /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				A26A853E2B04EF9F00CD4F0F /* TabBarView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		A26A85402B04EFF000CD4F0F /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				A26A85412B04F00400CD4F0F /* EventView.swift */,
+			);
+			path = Event;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,10 +242,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A26A853A2B04EE7C00CD4F0F /* FileManagerClass.swift in Sources */,
+				A26A85222B04EB9400CD4F0F /* Comment+CoreDataClass.swift in Sources */,
+				A26A853F2B04EF9F00CD4F0F /* TabBarView.swift in Sources */,
+				A26A85422B04F00400CD4F0F /* EventView.swift in Sources */,
+				A26A853C2B04EE9900CD4F0F /* LocationManager.swift in Sources */,
+				A26A852B2B04EC7B00CD4F0F /* CustomComponents.swift in Sources */,
+				A26A85262B04EB9400CD4F0F /* Event+CoreDataClass.swift in Sources */,
 				A26A85092B04824A00CD4F0F /* EventifyApp.swift in Sources */,
+				A26A85252B04EB9400CD4F0F /* User+CoreDataProperties.swift in Sources */,
+				A26A85232B04EB9400CD4F0F /* Comment+CoreDataProperties.swift in Sources */,
+				A26A85342B04EDAB00CD4F0F /* Register.swift in Sources */,
 				A26A850E2B04824A00CD4F0F /* Eventify.xcdatamodeld in Sources */,
-				A26A85102B04824A00CD4F0F /* ContentView.swift in Sources */,
-				A26A850B2B04824A00CD4F0F /* Persistence.swift in Sources */,
+				A26A85272B04EB9400CD4F0F /* Event+CoreDataProperties.swift in Sources */,
+				A26A852D2B04ED0E00CD4F0F /* Validation.swift in Sources */,
+				A26A85322B04ED9B00CD4F0F /* ProfileView.swift in Sources */,
+				A26A85382B04EE6500CD4F0F /* DataManager.swift in Sources */,
+				A26A85242B04EB9400CD4F0F /* User+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +392,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Eventify/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Grant location to get the location of the Event";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -320,6 +432,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Eventify/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Grant location to get the location of the Event";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
