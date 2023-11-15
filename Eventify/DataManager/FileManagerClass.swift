@@ -67,6 +67,18 @@ class FileManagerClass: NSObject {
         }
     }
     
+    func deleteImageFromFileManager(relativePath: String) {
+            let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+            let localFileURL = documentsDirectory.appendingPathComponent(relativePath)
+
+            do {
+                try FileManager.default.removeItem(at: localFileURL)
+                print("Image deleted from file manager:", localFileURL)
+            } catch {
+                print("Error deleting image from file manager:", error.localizedDescription)
+            }
+        }
+    
 }
 
 let fileManagerClassInstance = FileManagerClass.sharedInstance

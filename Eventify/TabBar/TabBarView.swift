@@ -12,7 +12,7 @@ struct TabBarView: View {
         TabView {
             EventView()
                 .tabItem {
-                    Label("Trip", systemImage: "airplane")
+                    Label("Event", systemImage: "airplane")
                 }
             ProfileView()
                 .tabItem {

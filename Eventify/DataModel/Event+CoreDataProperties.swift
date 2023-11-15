@@ -16,12 +16,13 @@ extension Event {
         return NSFetchRequest<Event>(entityName: "Event")
     }
 
-    @NSManaged public var eventTitle: String?
     @NSManaged public var eventDetail: String?
     @NSManaged public var eventImage: String?
-    @NSManaged public var eventLocation: String?
-    @NSManaged public var user: User?
+    @NSManaged public var eventLatitude: Double
+    @NSManaged public var eventTitle: String?
+    @NSManaged public var eventLongitude: Double
     @NSManaged public var comments: NSSet?
+    @NSManaged public var user: User?
 
 }
 

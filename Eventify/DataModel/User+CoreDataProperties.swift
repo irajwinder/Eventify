@@ -16,10 +16,10 @@ extension User {
         return NSFetchRequest<User>(entityName: "User")
     }
 
-    @NSManaged public var userName: String?
-    @NSManaged public var userEmail: String?
-    @NSManaged public var userPassword: String?
     @NSManaged public var userDateOfBirth: Date?
+    @NSManaged public var userEmail: String?
+    @NSManaged public var userName: String?
+    @NSManaged public var userPassword: String?
     @NSManaged public var userProfilePhoto: String?
     @NSManaged public var events: NSSet?
 

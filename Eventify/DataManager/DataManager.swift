@@ -89,7 +89,7 @@ class DataManager: NSObject {
         }
     }
 
-    func saveEvent(user: User, eventTitle: String, eventDetail: String, eventLocation: String, eventImage: String) {
+    func saveEvent(user: User, eventTitle: String, eventDetail: String, eventImage: String, eventLongitude: Double, eventLatitude: Double) {
         // Access the view context from the persistent container
         let context = persistentContainer.viewContext
         // Create a new instance of the Event entity in the context
@@ -98,8 +98,9 @@ class DataManager: NSObject {
         
         event.eventTitle = eventTitle
         event.eventDetail = eventDetail
-        event.eventLocation = eventLocation
         event.eventImage = eventImage
+        event.eventLongitude = eventLongitude
+        event.eventLatitude = eventLatitude
         
         do {
             // Attempting to save the changes made to the context
