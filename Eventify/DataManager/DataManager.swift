@@ -21,7 +21,7 @@ class DataManager: NSObject {
     }
     
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "Wanderlust")
+        let container = NSPersistentContainer(name: "Eventify")
         container.loadPersistentStores { description, error in
             if let error = error {
                 fatalError("Failed to load Core Data stack: \(error)")
