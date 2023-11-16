@@ -28,6 +28,7 @@
 		A27DC7872B05826100F3863B /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27DC7812B05826100F3863B /* Event+CoreDataProperties.swift */; };
 		A27DC7882B05826100F3863B /* Comment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27DC7822B05826100F3863B /* Comment+CoreDataClass.swift */; };
 		A27DC7892B05826100F3863B /* Comment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27DC7832B05826100F3863B /* Comment+CoreDataProperties.swift */; };
+		A27DC78C2B06875500F3863B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27DC78B2B06875500F3863B /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		A27DC7812B05826100F3863B /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A27DC7822B05826100F3863B /* Comment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comment+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A27DC7832B05826100F3863B /* Comment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comment+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A27DC78B2B06875500F3863B /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,12 +90,12 @@
 			isa = PBXGroup;
 			children = (
 				A26A85282B04EB9B00CD4F0F /* DataModel */,
-				A26A85352B04EE3A00CD4F0F /* DataManager */,
 				A26A852E2B04ED2500CD4F0F /* Utility */,
 				A26A85292B04EC5000CD4F0F /* Components */,
 				A26A853D2B04EF7D00CD4F0F /* TabBar */,
 				A26A85302B04ED8000CD4F0F /* Profile */,
 				A26A85402B04EFF000CD4F0F /* Event */,
+				A27DC78A2B06873400F3863B /* Map */,
 				A26A85082B04824A00CD4F0F /* EventifyApp.swift */,
 				A26A85112B04824D00CD4F0F /* Assets.xcassets */,
 				A26A85432B04F46A00CD4F0F /* Info.plist */,
@@ -136,7 +138,10 @@
 		A26A852E2B04ED2500CD4F0F /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				A26A85392B04EE7C00CD4F0F /* FileManagerClass.swift */,
+				A26A853B2B04EE9900CD4F0F /* LocationManager.swift */,
 				A26A852C2B04ED0D00CD4F0F /* Validation.swift */,
+				A26A85372B04EE6500CD4F0F /* DataManager.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -148,16 +153,6 @@
 				A26A85332B04EDAB00CD4F0F /* Register.swift */,
 			);
 			path = Profile;
-			sourceTree = "<group>";
-		};
-		A26A85352B04EE3A00CD4F0F /* DataManager */ = {
-			isa = PBXGroup;
-			children = (
-				A26A85372B04EE6500CD4F0F /* DataManager.swift */,
-				A26A85392B04EE7C00CD4F0F /* FileManagerClass.swift */,
-				A26A853B2B04EE9900CD4F0F /* LocationManager.swift */,
-			);
-			path = DataManager;
 			sourceTree = "<group>";
 		};
 		A26A853D2B04EF7D00CD4F0F /* TabBar */ = {
@@ -176,6 +171,14 @@
 				A27DC76E2B057E2E00F3863B /* EventDetailsView.swift */,
 			);
 			path = Event;
+			sourceTree = "<group>";
+		};
+		A27DC78A2B06873400F3863B /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				A27DC78B2B06875500F3863B /* MapView.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +268,7 @@
 				A26A850E2B04824A00CD4F0F /* Eventify.xcdatamodeld in Sources */,
 				A27DC76F2B057E2E00F3863B /* EventDetailsView.swift in Sources */,
 				A26A852D2B04ED0E00CD4F0F /* Validation.swift in Sources */,
+				A27DC78C2B06875500F3863B /* MapView.swift in Sources */,
 				A26A85322B04ED9B00CD4F0F /* ProfileView.swift in Sources */,
 				A26A85382B04EE6500CD4F0F /* DataManager.swift in Sources */,
 			);

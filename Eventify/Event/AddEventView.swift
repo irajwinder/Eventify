@@ -32,7 +32,7 @@ struct AddEventView: View {
     @State private var imageURL: String = ""
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 Form {
                     Section(header: Text("Event Information")) {

@@ -33,7 +33,7 @@ struct EventView: View {
     @State private var searchText = ""
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 Picker(selection: $selectedView, label: Text("View")) {
                     Text("List").tag(0)
@@ -86,7 +86,7 @@ struct EventView: View {
                 let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
                 print(paths[0])
             }
-        }.navigationViewStyle(StackNavigationViewStyle())
+        }
     }
 
     var filteredEvents: [Event] {

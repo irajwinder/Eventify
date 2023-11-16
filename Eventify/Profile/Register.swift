@@ -12,7 +12,7 @@ struct Register: View {
     @State private var selectedTab = 0 // 0 for Register, 1 for Login
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 Picker("Select View", selection: $selectedTab) {
                     Text("Register").tag(0)
@@ -24,9 +24,11 @@ struct Register: View {
                 if selectedTab == 0 {
                     RegisterView()
                 } else {
-                    LoginView()                }
+                    LoginView()               
+                }
+                Spacer()
             }
-        }.navigationViewStyle(StackNavigationViewStyle())
+        }
     }
 }
 
@@ -42,7 +44,6 @@ struct LoginView: View {
     @AppStorage("loggedInUserID") var loggedInUserID: String?
     
     var body: some View {
-        NavigationView {
             VStack {
                 CustomTextField(placeholder: "Email", text: $email)
                     .padding()
@@ -50,7 +51,7 @@ struct LoginView: View {
                 CustomSecureTextField(placeholder: "Password", text: $password)
                     .padding()
             }
-        }
+        
         .navigationTitle("Login")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
@@ -64,7 +65,6 @@ struct LoginView: View {
         .fullScreenCover(isPresented: $isLoggedIn) {
             TabBarView()
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     func validateUser() {
@@ -107,7 +107,6 @@ struct RegisterView: View {
     @State private var alert: Alert?
     
     var body: some View {
-        NavigationView {
             VStack {
                 CustomTextField(placeholder: "Email", text: $email)
                     .padding()
@@ -118,7 +117,7 @@ struct RegisterView: View {
                 CustomSecureTextField(placeholder: "Confirm Password", text: $confirmPassword)
                     .padding()
             }
-        }.navigationTitle("Register")
+        .navigationTitle("Register")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save", action: {
@@ -129,7 +128,6 @@ struct RegisterView: View {
             .alert(isPresented: $showAlert) {
             alert!
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     func validateUser() {

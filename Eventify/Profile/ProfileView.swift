@@ -22,7 +22,7 @@ struct ProfileView: View {
     @State private var userProfilePicture: UIImage?
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 HStack {
                     Spacer()
@@ -102,7 +102,6 @@ struct ProfileView: View {
         }.onAppear(perform: {
             fetchUserDetails()
         })
-        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     func fetchUserDetails() {

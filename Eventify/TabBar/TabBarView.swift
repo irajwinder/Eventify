@@ -18,6 +18,10 @@ struct TabBarView: View {
                 .tabItem {
                     Label("Profile", systemImage: "person")
                 }
+            MapView()
+                .tabItem {
+                    Label("Map", systemImage: "map")
+                }
         }
     }
 }
