@@ -102,6 +102,7 @@ struct ProfileView: View {
         }.onAppear(perform: {
             fetchUserDetails()
         })
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     func fetchUserDetails() {

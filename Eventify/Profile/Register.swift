@@ -26,7 +26,7 @@ struct Register: View {
                 } else {
                     LoginView()                }
             }
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
@@ -64,6 +64,7 @@ struct LoginView: View {
         .fullScreenCover(isPresented: $isLoggedIn) {
             TabBarView()
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     func validateUser() {
@@ -124,9 +125,11 @@ struct RegisterView: View {
                         validateUser()
                     })
                 }
-            }.alert(isPresented: $showAlert) {
+            }
+            .alert(isPresented: $showAlert) {
             alert!
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     func validateUser() {

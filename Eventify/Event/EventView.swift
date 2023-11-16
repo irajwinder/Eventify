@@ -86,7 +86,7 @@ struct EventView: View {
                 let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
                 print(paths[0])
             }
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 
     var filteredEvents: [Event] {
