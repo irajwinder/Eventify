@@ -41,11 +41,11 @@ struct AddEventView: View {
                             CustomTextField(placeholder: "Event Title", text: $eventTitle)
                                 .padding()
                         }
+                      
                         
                         HStack {
                             CustomText(text: "Event Details", textSize: 20, textColor: .black)
-                            CustomTextField(placeholder: "Event Details", text: $eventDetail)
-                                .padding()
+                            CustomMultilineTextField(placeholder: "Event Details", text: $eventDetail)
                         }
                         
                         HStack {
