@@ -3,6 +3,7 @@
     <entity name="Comment" representedClassName=".Comment" syncable="YES">
         <attribute name="text" optional="YES" attributeType="String"/>
         <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="comments" inverseEntity="Event"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="comment" inverseEntity="User"/>
     </entity>
     <entity name="Event" representedClassName=".Event" syncable="YES">
         <attribute name="eventDetail" optional="YES" attributeType="String"/>
@@ -19,6 +20,7 @@
         <attribute name="userName" optional="YES" attributeType="String"/>
         <attribute name="userPassword" optional="YES" attributeType="String"/>
         <attribute name="userProfilePhoto" optional="YES" attributeType="String"/>
+        <relationship name="comment" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" inverseName="user" inverseEntity="Comment"/>
         <relationship name="events" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Event" inverseName="user" inverseEntity="Event"/>
     </entity>
 </model>

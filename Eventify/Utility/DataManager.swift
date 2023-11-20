@@ -5,7 +5,6 @@
 //  Created by Rajwinder Singh on 11/15/23.
 //
 
-import UIKit //Remove UIKIT
 import CoreData
 
 //Singleton Class
@@ -112,30 +111,40 @@ class DataManager: NSObject {
         }
     }
     
-//    func saveJournal(tripName: Trip, journalEntryText: String, journalEntryDate: Date, journalEntryPhoto: String, photoLatitude: Double, photoLongitude: Double) {
-//        // Access the view context from the persistent container
-//        let context = persistentContainer.viewContext
-//        // Create a new instance of the Journal entity in the context
-//        let journal = Journal(context: context)
-//        journal.setValue(tripName, forKey: "trip")
-//        
-//        journal.journalEntryText = journalEntryText
-//        journal.journalEntryDate = journalEntryDate
-//        journal.journalEntryPhoto = journalEntryPhoto
-//        journal.photoLatitude = photoLatitude
-//        journal.photoLongitude = photoLongitude
-//        
-//        do {
-//            // Attempting to save the changes made to the context
-//            try context.save()
-//            print("Journal data saved successfully.")
-//        } catch let error as NSError {
-//            // Informs the user that an error occurred while saving the data.
-//            print("Could not save. \(error), \(error.userInfo)")
-//        }
-//    }
+    func fetchEvents() -> [Event]? {
+        // Access the view context from the persistent container
+        let context = persistentContainer.viewContext
+
+        do {
+            // Fetch all events based on the fetch request
+            let events = try context.fetch(Event.fetchRequest())
+            return events
+        } catch let error as NSError {
+            // Handle the error
+            print("Could not fetch events. \(error), \(error.userInfo)")
+            return nil
+        }
+    }
     
-    
+    func saveComment(event: Event, user: User , eventComment: String) {
+        // Access the view context from the persistent container
+        let context = persistentContainer.viewContext
+        // Create a new instance of the Comment entity in the context
+        let comment = Comment(context: context)
+        comment.setValue(event, forKey: "event")
+        comment.setValue(user, forKey: "user")
+        
+        comment.text = eventComment
+        
+        do {
+            // Attempting to save the changes made to the context
+            try context.save()
+            print("Comment saved successfully.")
+        } catch let error as NSError {
+            // Informs the user that an error occurred while saving the data.
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
     
     func deleteEntity(_ entity: NSManagedObject) {
         // Access the view context from the persistent container

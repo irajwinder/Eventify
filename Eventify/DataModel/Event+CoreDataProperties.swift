@@ -2,7 +2,7 @@
 //  Event+CoreDataProperties.swift
 //  Eventify
 //
-//  Created by Rajwinder Singh on 11/15/23.
+//  Created by Rajwinder Singh on 11/20/23.
 //
 //
 
@@ -19,8 +19,8 @@ extension Event {
     @NSManaged public var eventDetail: String?
     @NSManaged public var eventImage: String?
     @NSManaged public var eventLatitude: Double
-    @NSManaged public var eventTitle: String?
     @NSManaged public var eventLongitude: Double
+    @NSManaged public var eventTitle: String?
     @NSManaged public var comments: NSSet?
     @NSManaged public var user: User?
 

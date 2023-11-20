@@ -9,20 +9,26 @@ import SwiftUI
 
 class EventViewModel: ObservableObject {
     @Published var events: [Event] = []
-    @AppStorage("loggedInUserID") var loggedInUserID: String?
+//    @AppStorage("loggedInUserID") var loggedInUserID: String?
+//    
+//    func fetchEvents() {
+//        guard let loggedInUserID = loggedInUserID,
+//              let user = dataManagerInstance.fetchUser(userEmail: loggedInUserID) else {
+//            print("Could not fetch user")
+//            return
+//        }
+//       
+//        guard let fetch = user.events as? Set<Event> else {
+//            print("Could not fetch trips for the user")
+//            return
+//        }
+//        self.events = Array(fetch)
+//   }
     
     func fetchEvents() {
-        guard let loggedInUserID = loggedInUserID,
-              let user = dataManagerInstance.fetchUser(userEmail: loggedInUserID) else {
-            print("Could not fetch user")
-            return
+        if let allEvents = dataManagerInstance.fetchEvents() {
+            self.events = allEvents
         }
-       
-        guard let fetch = user.events as? Set<Event> else {
-            print("Could not fetch trips for the user")
-            return
-        }
-        self.events = Array(fetch)
    }
 }
 
@@ -47,7 +53,7 @@ struct EventView: View {
                 if selectedView == 0 {
                     List {
                         ForEach(filteredEvents, id: \.self) { event in
-                            NavigationLink(destination: EventDetailsView(selectedTrip: event)) {
+                            NavigationLink(destination: EventDetailsView(selectedEvent: event)) {
                                 ListView(event: event)
                             }
                         }
@@ -59,7 +65,7 @@ struct EventView: View {
                     ScrollView {
                         LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
                             ForEach(filteredEvents, id: \.self) { event in
-                                NavigationLink(destination: EventDetailsView(selectedTrip: event)) {
+                                NavigationLink(destination: EventDetailsView(selectedEvent: event)) {
                                     GridView(event: event)
                                 }
                             }
@@ -125,6 +131,10 @@ struct ListView: View {
             VStack(alignment: .leading) {
                 Text(event.eventTitle ?? "")
                     .font(.headline)
+                
+                Text("\(event.eventLongitude), \(event.eventLongitude)")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
             }
         }
     }
@@ -145,7 +155,6 @@ struct GridView: View {
         }
     }
 }
-
 
 #Preview {
     EventView()

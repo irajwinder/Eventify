@@ -11,7 +11,7 @@ class LocationManager: NSObject, ObservableObject {
     // Create an instance of CLLocationManager to manage location services.
     private var locationManager = CLLocationManager()
     //Published property to track the user's location
-    @Published var userLocation: CLLocation?
+    @Published var userLocation: CLLocationCoordinate2D?
     
     override init() {
         super.init()
@@ -49,7 +49,7 @@ extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // Update the userLocation property with the most recent location.
         if let location = locations.last {
-            self.userLocation = location
+            self.userLocation = location.coordinate
         }
     }
     

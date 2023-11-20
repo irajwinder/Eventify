@@ -24,7 +24,7 @@ class FileManagerClass: NSObject {
         guard let imageData = uiImage.jpegData(compressionQuality: 0.5) else {
             return nil
         }
-        //UUID for trip and photo
+        //UUID for Event and photo
         let relativeURL  = "\(folderName)/\(fileName)"
         
         do {

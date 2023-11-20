@@ -7,8 +7,16 @@
 
 import SwiftUI
 import PhotosUI
+import MapKit
+
+//Annotation item with a unique identifier and coordinates
+struct AnnotationItem: Identifiable {
+    let id = UUID()
+    var coordinate: CLLocationCoordinate2D
+}
 
 struct AddEventView: View {
+    @ObservedObject var locationManager = LocationManager()
     @ObservedObject var viewModel: EventViewModel
     @Environment(\.dismiss) var dismiss
     
@@ -16,6 +24,7 @@ struct AddEventView: View {
     @State private var eventDetail: String = ""
     @State private var eventLatitude: Double = 0.0
     @State private var eventLongitude: Double = 0.0
+
     @State private var eventImage: String?
  
     @State private var tripCoverPhoto: UIImage?
@@ -31,6 +40,13 @@ struct AddEventView: View {
     @State private var isSelectingFromGallery = true
     @State private var imageURL: String = ""
     
+    @State private var region = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194),
+        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+    )
+
+    @State private var annotations: [AnnotationItem] = []
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -42,10 +58,48 @@ struct AddEventView: View {
                                 .padding()
                         }
                       
-                        
                         HStack {
                             CustomText(text: "Event Details", textSize: 20, textColor: .black)
                             CustomMultilineTextField(placeholder: "Event Details", text: $eventDetail)
+                        }
+                        
+                        VStack(alignment: .leading) {
+                            CustomText(text: "Location", textSize: 20, textColor: .black)
+                                
+                            Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: annotations) { annotation in
+                                MapPin(coordinate: annotation.coordinate, tint: .blue)
+                            }
+                            .onAppear {
+                                if let userLocation = locationManager.userLocation {
+                                    annotations = [AnnotationItem(coordinate: userLocation)]
+                                    region.center = userLocation
+                                    eventLatitude = userLocation.latitude
+                                    eventLongitude = userLocation.longitude
+                                }
+                            }
+
+                            .gesture(
+                                DragGesture()
+                                    .onChanged { value in
+                                        let location = value.location
+                                        let offset = CGPoint(x: location.x - UIScreen.main.bounds.width / 2, y: location.y - UIScreen.main.bounds.height / 2)
+
+                                        // Convert the screen offset to coordinate offset
+                                        let span = region.span
+                                        let newLatitude = region.center.latitude - Double(offset.y) / 10000 * span.latitudeDelta
+                                        let newLongitude = region.center.longitude + Double(offset.x) / 10000 * span.longitudeDelta
+
+                                        // Update the region and annotation
+                                        region.center = CLLocationCoordinate2D(latitude: newLatitude, longitude: newLongitude)
+                                        annotations[0].coordinate = CLLocationCoordinate2D(latitude: newLatitude, longitude: newLongitude)
+
+                                        eventLatitude = newLatitude
+                                        eventLongitude = newLongitude
+                                    }
+                            )
+                            .frame(height: 300)
+                            Text("Latitude \(eventLatitude)")
+                            Text("Longitude \(eventLongitude)")
                         }
                         
                         HStack {
@@ -181,7 +235,6 @@ struct AddEventView: View {
             return
         }
         
-        
         guard let eventImage = eventImage else {
             showAlert = true
             alert = Validation.showAlert(title: "Error", message: "Please select an event photo")
@@ -191,6 +244,12 @@ struct AddEventView: View {
         guard let loggedInUserID = loggedInUserID,
               let user = dataManagerInstance.fetchUser(userEmail: loggedInUserID) else {
             print("Could not fetch user")
+            return
+        }
+        
+        guard eventLatitude != 0.0 && eventLongitude != 0.0 else {
+            showAlert = true
+            alert = Validation.showAlert(title: "Error", message: "Please select event Location")
             return
         }
         

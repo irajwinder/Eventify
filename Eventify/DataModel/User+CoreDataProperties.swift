@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.swift
 //  Eventify
 //
-//  Created by Rajwinder Singh on 11/15/23.
+//  Created by Rajwinder Singh on 11/20/23.
 //
 //
 
@@ -22,6 +22,7 @@ extension User {
     @NSManaged public var userPassword: String?
     @NSManaged public var userProfilePhoto: String?
     @NSManaged public var events: NSSet?
+    @NSManaged public var comment: NSSet?
 
 }
 
@@ -39,6 +40,23 @@ extension User {
 
     @objc(removeEvents:)
     @NSManaged public func removeFromEvents(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for comment
+extension User {
+
+    @objc(addCommentObject:)
+    @NSManaged public func addToComment(_ value: Comment)
+
+    @objc(removeCommentObject:)
+    @NSManaged public func removeFromComment(_ value: Comment)
+
+    @objc(addComment:)
+    @NSManaged public func addToComment(_ values: NSSet)
+
+    @objc(removeComment:)
+    @NSManaged public func removeFromComment(_ values: NSSet)
 
 }
 

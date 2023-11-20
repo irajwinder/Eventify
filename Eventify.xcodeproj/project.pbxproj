@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A23EF9842B0B820F00C34F87 /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23EF97E2B0B820F00C34F87 /* Event+CoreDataClass.swift */; };
+		A23EF9852B0B820F00C34F87 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23EF97F2B0B820F00C34F87 /* Event+CoreDataProperties.swift */; };
+		A23EF9862B0B820F00C34F87 /* Comment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23EF9802B0B820F00C34F87 /* Comment+CoreDataClass.swift */; };
+		A23EF9872B0B820F00C34F87 /* Comment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23EF9812B0B820F00C34F87 /* Comment+CoreDataProperties.swift */; };
+		A23EF9882B0B820F00C34F87 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23EF9822B0B820F00C34F87 /* User+CoreDataClass.swift */; };
+		A23EF9892B0B820F00C34F87 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23EF9832B0B820F00C34F87 /* User+CoreDataProperties.swift */; };
 		A26A85092B04824A00CD4F0F /* EventifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A85082B04824A00CD4F0F /* EventifyApp.swift */; };
 		A26A850E2B04824A00CD4F0F /* Eventify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A26A850C2B04824A00CD4F0F /* Eventify.xcdatamodeld */; };
 		A26A85122B04824D00CD4F0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A26A85112B04824D00CD4F0F /* Assets.xcassets */; };
@@ -22,16 +28,16 @@
 		A26A85422B04F00400CD4F0F /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A85412B04F00400CD4F0F /* EventView.swift */; };
 		A27DC76F2B057E2E00F3863B /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27DC76E2B057E2E00F3863B /* EventDetailsView.swift */; };
 		A27DC7712B05800E00F3863B /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27DC7702B05800E00F3863B /* AddEventView.swift */; };
-		A27DC7842B05826100F3863B /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27DC77E2B05826100F3863B /* User+CoreDataClass.swift */; };
-		A27DC7852B05826100F3863B /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27DC77F2B05826100F3863B /* User+CoreDataProperties.swift */; };
-		A27DC7862B05826100F3863B /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27DC7802B05826100F3863B /* Event+CoreDataClass.swift */; };
-		A27DC7872B05826100F3863B /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27DC7812B05826100F3863B /* Event+CoreDataProperties.swift */; };
-		A27DC7882B05826100F3863B /* Comment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27DC7822B05826100F3863B /* Comment+CoreDataClass.swift */; };
-		A27DC7892B05826100F3863B /* Comment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27DC7832B05826100F3863B /* Comment+CoreDataProperties.swift */; };
 		A27DC78C2B06875500F3863B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27DC78B2B06875500F3863B /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A23EF97E2B0B820F00C34F87 /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A23EF97F2B0B820F00C34F87 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A23EF9802B0B820F00C34F87 /* Comment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comment+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A23EF9812B0B820F00C34F87 /* Comment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comment+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A23EF9822B0B820F00C34F87 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A23EF9832B0B820F00C34F87 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A26A85052B04824A00CD4F0F /* Eventify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A26A85082B04824A00CD4F0F /* EventifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventifyApp.swift; sourceTree = "<group>"; };
 		A26A850D2B04824A00CD4F0F /* Eventify.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Eventify.xcdatamodel; sourceTree = "<group>"; };
@@ -50,12 +56,6 @@
 		A26A85432B04F46A00CD4F0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A27DC76E2B057E2E00F3863B /* EventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsView.swift; sourceTree = "<group>"; };
 		A27DC7702B05800E00F3863B /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
-		A27DC77E2B05826100F3863B /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A27DC77F2B05826100F3863B /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A27DC7802B05826100F3863B /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A27DC7812B05826100F3863B /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A27DC7822B05826100F3863B /* Comment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comment+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A27DC7832B05826100F3863B /* Comment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comment+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A27DC78B2B06875500F3863B /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,12 +117,12 @@
 		A26A85282B04EB9B00CD4F0F /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				A27DC77E2B05826100F3863B /* User+CoreDataClass.swift */,
-				A27DC77F2B05826100F3863B /* User+CoreDataProperties.swift */,
-				A27DC7802B05826100F3863B /* Event+CoreDataClass.swift */,
-				A27DC7812B05826100F3863B /* Event+CoreDataProperties.swift */,
-				A27DC7822B05826100F3863B /* Comment+CoreDataClass.swift */,
-				A27DC7832B05826100F3863B /* Comment+CoreDataProperties.swift */,
+				A23EF97E2B0B820F00C34F87 /* Event+CoreDataClass.swift */,
+				A23EF97F2B0B820F00C34F87 /* Event+CoreDataProperties.swift */,
+				A23EF9802B0B820F00C34F87 /* Comment+CoreDataClass.swift */,
+				A23EF9812B0B820F00C34F87 /* Comment+CoreDataProperties.swift */,
+				A23EF9822B0B820F00C34F87 /* User+CoreDataClass.swift */,
+				A23EF9832B0B820F00C34F87 /* User+CoreDataProperties.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -140,8 +140,8 @@
 			children = (
 				A26A85392B04EE7C00CD4F0F /* FileManagerClass.swift */,
 				A26A853B2B04EE9900CD4F0F /* LocationManager.swift */,
-				A26A852C2B04ED0D00CD4F0F /* Validation.swift */,
 				A26A85372B04EE6500CD4F0F /* DataManager.swift */,
+				A26A852C2B04ED0D00CD4F0F /* Validation.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -252,24 +252,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				A26A853A2B04EE7C00CD4F0F /* FileManagerClass.swift in Sources */,
-				A27DC7872B05826100F3863B /* Event+CoreDataProperties.swift in Sources */,
 				A26A853F2B04EF9F00CD4F0F /* TabBarView.swift in Sources */,
 				A26A85422B04F00400CD4F0F /* EventView.swift in Sources */,
+				A23EF9882B0B820F00C34F87 /* User+CoreDataClass.swift in Sources */,
 				A26A853C2B04EE9900CD4F0F /* LocationManager.swift in Sources */,
 				A26A852B2B04EC7B00CD4F0F /* CustomComponents.swift in Sources */,
 				A26A85092B04824A00CD4F0F /* EventifyApp.swift in Sources */,
-				A27DC7842B05826100F3863B /* User+CoreDataClass.swift in Sources */,
+				A23EF9852B0B820F00C34F87 /* Event+CoreDataProperties.swift in Sources */,
 				A27DC7712B05800E00F3863B /* AddEventView.swift in Sources */,
-				A27DC7892B05826100F3863B /* Comment+CoreDataProperties.swift in Sources */,
-				A27DC7882B05826100F3863B /* Comment+CoreDataClass.swift in Sources */,
-				A27DC7852B05826100F3863B /* User+CoreDataProperties.swift in Sources */,
+				A23EF9842B0B820F00C34F87 /* Event+CoreDataClass.swift in Sources */,
 				A26A85342B04EDAB00CD4F0F /* Register.swift in Sources */,
-				A27DC7862B05826100F3863B /* Event+CoreDataClass.swift in Sources */,
 				A26A850E2B04824A00CD4F0F /* Eventify.xcdatamodeld in Sources */,
 				A27DC76F2B057E2E00F3863B /* EventDetailsView.swift in Sources */,
+				A23EF9862B0B820F00C34F87 /* Comment+CoreDataClass.swift in Sources */,
 				A26A852D2B04ED0E00CD4F0F /* Validation.swift in Sources */,
 				A27DC78C2B06875500F3863B /* MapView.swift in Sources */,
 				A26A85322B04ED9B00CD4F0F /* ProfileView.swift in Sources */,
+				A23EF9872B0B820F00C34F87 /* Comment+CoreDataProperties.swift in Sources */,
+				A23EF9892B0B820F00C34F87 /* User+CoreDataProperties.swift in Sources */,
 				A26A85382B04EE6500CD4F0F /* DataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,9 +405,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Eventify/Info.plist;
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Grant location to get the location of the Event";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Grant location to get your current location";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
@@ -445,9 +446,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Eventify/Info.plist;
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Grant location to get the location of the Event";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Grant location to get your current location";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
