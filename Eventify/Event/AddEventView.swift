@@ -66,22 +66,31 @@ struct AddEventView: View {
                         VStack(alignment: .leading) {
                             CustomText(text: "Location", textSize: 20, textColor: .black)
                                 
+                           
                             Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: annotations) { annotation in
+                                // MapPin for the annotation with a blue tint
                                 MapPin(coordinate: annotation.coordinate, tint: .blue)
                             }
+                            // Execute the following code block when the Map view appears
                             .onAppear {
+                                // Check if the user location is available
                                 if let userLocation = locationManager.userLocation {
+                                    // Set the annotations array with a AnnotationItem representing the user's location
                                     annotations = [AnnotationItem(coordinate: userLocation)]
+                                    // Set the region's center to the user's location
                                     region.center = userLocation
+                                    // Set user's latitude and longitude
                                     eventLatitude = userLocation.latitude
                                     eventLongitude = userLocation.longitude
                                 }
                             }
-
+                            //gesture recognizer for dragging on the Map view
                             .gesture(
                                 DragGesture()
                                     .onChanged { value in
+                                        // Get the location of the drag gesture
                                         let location = value.location
+                                        // Calculate the offset from the center of the screen
                                         let offset = CGPoint(x: location.x - UIScreen.main.bounds.width / 2, y: location.y - UIScreen.main.bounds.height / 2)
 
                                         // Convert the screen offset to coordinate offset
@@ -89,10 +98,11 @@ struct AddEventView: View {
                                         let newLatitude = region.center.latitude - Double(offset.y) / 10000 * span.latitudeDelta
                                         let newLongitude = region.center.longitude + Double(offset.x) / 10000 * span.longitudeDelta
 
-                                        // Update the region and annotation
+                                        // Update the region and annotation with the new coordinates
                                         region.center = CLLocationCoordinate2D(latitude: newLatitude, longitude: newLongitude)
                                         annotations[0].coordinate = CLLocationCoordinate2D(latitude: newLatitude, longitude: newLongitude)
 
+                                        // Update new latitude and longitude
                                         eventLatitude = newLatitude
                                         eventLongitude = newLongitude
                                     }
