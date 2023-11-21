@@ -9,21 +9,6 @@ import SwiftUI
 
 class EventViewModel: ObservableObject {
     @Published var events: [Event] = []
-//    @AppStorage("loggedInUserID") var loggedInUserID: String?
-//    
-//    func fetchEvents() {
-//        guard let loggedInUserID = loggedInUserID,
-//              let user = dataManagerInstance.fetchUser(userEmail: loggedInUserID) else {
-//            print("Could not fetch user")
-//            return
-//        }
-//       
-//        guard let fetch = user.events as? Set<Event> else {
-//            print("Could not fetch trips for the user")
-//            return
-//        }
-//        self.events = Array(fetch)
-//   }
     
     func fetchEvents() {
         if let allEvents = dataManagerInstance.fetchEvents() {
@@ -131,10 +116,6 @@ struct ListView: View {
             VStack(alignment: .leading) {
                 Text(event.eventTitle ?? "")
                     .font(.headline)
-                
-                Text("\(event.eventLongitude), \(event.eventLongitude)")
-                    .font(.caption)
-                    .foregroundColor(.secondary)
             }
         }
     }

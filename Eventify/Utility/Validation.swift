@@ -41,27 +41,8 @@ struct Validation {
         return date <= Date() // Checks if the date is not in the future
     }
     
-    static func isValidTripStartDate(_ date: Date) -> Bool {
-        return date >= Date() // Checks if the date is not in the past
-    }
-    
-    static func isValidTripEndDate(_ endDate: Date, startDate: Date) -> Bool {
-        return endDate > startDate
-    }
 
     static func showAlert(title: String, message: String) -> Alert {
         return Alert(title: Text(title), message: Text(message), dismissButton: .default(Text("OK")))
-    }
-    
-    static func dateToString(_ date: Date?) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
-        
-        if let startDate = date {
-            return dateFormatter.string(from: startDate)
-        } else {
-            return "N/A"
-        }
     }
 }

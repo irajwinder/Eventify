@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct EventDetailsView: View {
     let selectedEvent: Event
     @State private var comments: [Comment] = []
@@ -14,60 +16,66 @@ struct EventDetailsView: View {
     @AppStorage("loggedInUserID") var loggedInUserID: String?
     
     var body: some View {
-        VStack {
-            CustomCoverPhoto(coverPhoto: fileManagerClassInstance.loadImageFromFileManager(relativePath: selectedEvent.eventImage ?? ""))
-                .frame(width: 200, height: 200)
-                .cornerRadius(8)
-            
-            Text(selectedEvent.eventTitle ?? "")
-                .font(.title)
-                .padding()
-            
-            HStack {
-                Text("Longitude: \(selectedEvent.eventLongitude)")
-                Spacer()
-                Text("Latitude: \(selectedEvent.eventLatitude)")
-            }
-            .padding()
-            
-            Text("Event Details:")
-                .font(.headline)
-                .padding(.bottom, 5)
-            
-            Text(selectedEvent.eventDetail ?? "")
-                .multilineTextAlignment(.leading)
-                .padding()
-            
-            
-            // Add comment section
-            List {
-                Section(header: Text("Comments")) {
-                    ForEach(comments, id: \.id) { comment in
-                        HStack {
-                            Text(comment.text ?? "")
-                            Text("by: \(comment.user?.userName ?? "")")
-                            .font(.caption)
-                            .foregroundColor(.gray)
-                        }
+        ScrollView {
+            VStack(alignment: .leading, spacing: 16) {
+                CustomCoverPhoto(coverPhoto: fileManagerClassInstance.loadImageFromFileManager(relativePath: selectedEvent.eventImage ?? ""))
+                    .frame(maxWidth: .infinity, maxHeight: 200)
+                
+                HStack {
+                    Text("Event Name:")
+                        .font(.headline)
+                    
+                    Text(selectedEvent.eventTitle ?? "")
+                        .font(.caption)
+                }
+                
+                HStack {
+                    Text("Longitude:")
+                        .font(.headline)
+                    Text("\(selectedEvent.eventLongitude)")
+                        .font(.caption)
+                    Spacer()
+                    Text("Latitude:")
+                        .font(.headline)
+                    Text("\(selectedEvent.eventLatitude)")
+                        .font(.caption)
+                }
+                
+                HStack {
+                    Text("Event Details:")
+                        .font(.headline)
+                    
+                    Text(selectedEvent.eventDetail ?? "")
+                        .multilineTextAlignment(.leading)
+                        .font(.caption)
+                }
+                
+                HStack {
+                    TextField("Add a comment", text: $newComment)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.trailing, 8)
+                    
+                    Button(action: {
+                        postComment()
+                    }) {
+                        Text("Post")
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 8)
+                            .foregroundColor(.white)
+                            .background(Color.blue)
+                            .cornerRadius(8)
                     }
                 }
                 
-                Section {
-                    HStack {
-                        TextField("Add a comment", text: $newComment)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                        
-                        Button("Post") {
-                            postComment()
+                Section(header: Text("Comments")) {
+                    ForEach(comments, id: \.id) { comment in
+                        CommentView(comment: comment) {
+                            deleteComment(comment)
                         }
                     }
                 }
             }
-            .listStyle(InsetGroupedListStyle())
             .padding()
-            
-            Spacer()
-            
         }
         .navigationTitle("Event Details")
         .onAppear {
@@ -83,23 +91,57 @@ struct EventDetailsView: View {
         self.comments = Array(fetch)
     }
 
-    
     func postComment() {
         guard let loggedInUserID = loggedInUserID,
               let user = dataManagerInstance.fetchUser(userEmail: loggedInUserID) else {
             print("Could not fetch user")
             return
         }
-        
+
         dataManagerInstance.saveComment(
-            event: selectedEvent, 
+            event: selectedEvent,
             user: user,
             eventComment: newComment
         )
-        
+
         // Clear the text field after posting
         newComment = ""
         fetchComments()
+    }
+    
+    func deleteComment(_ comment: Comment) {
+        dataManagerInstance.deleteEntity(comment)
+        fetchComments()
+    }
+}
+
+struct CommentView: View {
+    let comment: Comment
+    let onDelete: () -> Void
+    @AppStorage("loggedInUserID") var loggedInUserID: String?
+    
+    var body: some View {
+        HStack(alignment: .top, spacing: 8) {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(comment.text ?? "")
+                Text("by: \(comment.user?.userEmail ?? "")")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+            }
+            Spacer()
+            
+            // Only show the delete button if the logged-in user is the owner of the comment
+            if comment.user?.userEmail == loggedInUserID {
+                Button(action: {
+                    onDelete()
+                }) {
+                    Image(systemName: "trash")
+                        .foregroundColor(.red)
+                }
+            }
+        }
+        .padding(8)
+        .background(RoundedRectangle(cornerRadius: 8).fill(Color.gray.opacity(0.1)))
     }
 }
 

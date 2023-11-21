@@ -15,9 +15,6 @@ struct MapView: View {
         Map() {
             ForEach(events ?? [], id: \.self) { event in
                 Marker(event.eventTitle ?? "",  systemImage: "calendar", coordinate: CLLocationCoordinate2D(latitude: event.eventLatitude, longitude: event.eventLongitude))
-//                Annotation(event.eventTitle ?? "", coordinate: CLLocationCoordinate2D(latitude: event.eventLatitude, longitude: event.eventLongitude)) {
-//                    Image(systemName: "calendar")
-//                }
             }
         }
         .onAppear() {

@@ -149,13 +149,13 @@ class DataManager: NSObject {
     func deleteEntity(_ entity: NSManagedObject) {
         // Access the view context from the persistent container
         let context = persistentContainer.viewContext
-        // Remove the trip from the context
+        // Remove the entity from the context
         context.delete(entity)
 
         do {
             // Attempting to save the changes made to the context
             try context.save()
-            print("Trip deleted successfully.")
+            print("Entity deleted successfully.")
         } catch let error as NSError {
             // Informs the user that an error occurred while saving the data.
             print("Could not delete. \(error), \(error.userInfo)")
