@@ -39,7 +39,7 @@ This project utilizes the following technologies:
 
 - Programming Language: Swift
 - Database: CoreData
-- Frameworks: SwiftUI
+- Frameworks: SwiftUI, Mapkit, Corelocation
 
 ## Installation
 1. Clone the repository: `git clone https://github.com/irajwinder/Eventify.git`
