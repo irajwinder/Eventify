@@ -9,21 +9,12 @@ import SwiftUI
 import PhotosUI
 import MapKit
 
-struct AnnotationItem: Identifiable {
-    let id = UUID()
-    var coordinate: CLLocationCoordinate2D
-}
-
 struct AddEventView: View {
-    @ObservedObject var locationManager = LocationManager()
     @ObservedObject var viewModel: EventViewModel
     @Environment(\.dismiss) var dismiss
     
     @State private var eventTitle: String = ""
     @State private var eventDetail: String = ""
-    @State private var eventLatitude: Double = 0.0
-    @State private var eventLongitude: Double = 0.0
-
     @State private var eventImage: String?
     
     @State private var selectedPickerImage: PhotosPickerItem?
@@ -37,12 +28,11 @@ struct AddEventView: View {
     @State private var isSelectingFromGallery = true
     @State private var imageURL: String = ""
     
-    @State private var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194),
-        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-    )
-
-    @State private var annotations: [AnnotationItem] = []
+    @ObservedObject var locationManager = LocationManager()
+    @State private var position: MapCameraPosition = .automatic
+    @State var userLocation: CLLocationCoordinate2D?
+    @State private var eventLatitude: Double = 0.0
+    @State private var eventLongitude: Double = 0.0
     
     var body: some View {
         NavigationStack {
@@ -62,23 +52,22 @@ struct AddEventView: View {
                         
                         VStack(alignment: .leading) {
                             CustomText(text: "Location", textSize: 20, textColor: .black)
-                                
-                            Map(coordinateRegion: $region, showsUserLocation: true, userTrackingMode: .constant(.follow), annotationItems: [AnnotationItem(coordinate: locationManager.userLocation ?? CLLocationCoordinate2D())]) { location in
-                                MapPin(coordinate: location.coordinate, tint: .blue)
+                            
+                            Map(position: $position) {
+                                Marker("Pin", coordinate: userLocation ?? locationManager.userLocation ?? CLLocationCoordinate2D())
                             }
-                            .frame(height: 300)
-                            .onAppear {
-                                if let userLocation = locationManager.userLocation {
-                                    // Update the region to center on the user's location
-                                    region.center = userLocation
-                                }
-                            }
-                            .onReceive(locationManager.$userLocation) { newLocation in
-                                    eventLongitude = newLocation?.longitude ?? 0.0
-                                    eventLatitude = newLocation?.latitude ?? 0.0
-                            }
+                            .frame(height: 400)
+                            
                             Text("Latitude \(eventLatitude)")
                             Text("Longitude \(eventLongitude)")
+                        }
+                        // Handle changes in the Map's camera position
+                        .onMapCameraChange { value in
+                            // Set the userLocation property to the center of the changed region
+                            userLocation = value.region.center
+                            // Update the latitude and longitude variables
+                            eventLatitude = userLocation?.latitude ?? 0.0
+                            eventLongitude = userLocation?.longitude ?? 0.0
                         }
                         
                         HStack {
